@@ -1,0 +1,30 @@
+buildscript {
+    apply from: 'dependencies.gradle'
+    apply from: 'projectConfig.gradle'
+
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath "com.android.tools.build:gradle:$gradle_version"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath "com.google.dagger:hilt-android-gradle-plugin:$hilt_version"
+    }
+}
+
+apply from: 'dependencies.gradle'
+apply from: 'projectConfig.gradle'
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+        maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
+    }
+}
+
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

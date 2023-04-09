@@ -1,0 +1,51 @@
+ext {
+    gradle_version = '7.1.0-beta05'
+
+    // Compose
+    compose_version = '1.1.0-rc01'
+    accompanist_version = '0.15.0'
+    navigation_compose_version = '2.4.0-rc01'
+    viewmodel_compose_version = '2.4.0'
+
+    // Kotlin
+    kotlin_version = '1.6.0'
+    kotlin_sdk_version = '1.5.0'
+    coroutines_version = '1.6.0-native-mt'
+    coroutinesVersion = '1.5.0'
+    lifecycle_version = '2.4.0'
+    navigation_version = '2.3.5'
+
+    // Material
+    material_version = '1.4.0'
+
+    // Hilt
+    hilt_version = '2.40.5'
+    jetpackHiltVersion = '1.0.0'
+    hilt_navigation_version = '1.0.0-rc01'
+
+    // Network
+    moshiVersion = '1.11.0'
+    retrofitVersion = '2.9.0'
+
+    // Database
+    roomVersion = '2.4.0'
+
+    // Datastore
+    datastore_version = '1.0.0'
+
+    appcompat_version = '1.4.0'
+    activity_version = '1.4.0'
+    core_version = '1.8.0-alpha02'
+    activity_compose_version = '1.4.0'
+
+    javaxInjectVersion = '1'
+    legacySupportVersion = '1.0.0'
+
+    // Test
+    truth_version = '1.1.3'
+    jUnitVersion = '4.13.2'
+    ext_junit_version = '1.1.3'
+    coroutines_test_version = '1.5.0'
+    core_test_version = '2.1.0'
+    espresso_version = '3.4.0'
+}

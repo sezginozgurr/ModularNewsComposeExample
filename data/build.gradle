@@ -1,0 +1,53 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+
+def localProperties = new Properties()
+localProperties.load(new FileInputStream(rootProject.file("key.properties")))
+
+
+android {
+    compileSdkVersion ProjectConfig.compileSdkVersion
+    buildToolsVersion ProjectConfig.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion ProjectConfig.minSdkVersion
+        targetSdkVersion ProjectConfig.targetSdkVersion
+
+        buildConfigField "String", "API_TOKEN", localProperties['API_TOKEN']
+    }
+
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).all {
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+}
+
+dependencies {
+    implementation project(":core")
+
+    // Retrofit
+    api "com.squareup.retrofit2:retrofit:$retrofitVersion"
+
+    // JavaX Inject
+    implementation "javax.inject:javax.inject:$javaxInjectVersion"
+
+    // Moshi Retrofit Converter
+    api "com.squareup.retrofit2:converter-moshi:$retrofitVersion"
+
+    // Room
+    api "androidx.room:room-runtime:$roomVersion"
+    api "androidx.legacy:legacy-support-v4:$legacySupportVersion"
+    kapt "androidx.room:room-compiler:$roomVersion"
+    api "androidx.room:room-ktx:$roomVersion"
+}
